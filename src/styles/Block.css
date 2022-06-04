@@ -1,4 +1,5 @@
 .Block-container {
+  position: relative;
   width: 30%;
   height: 7.5%;
   margin: 3%;

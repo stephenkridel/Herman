@@ -32,7 +32,7 @@ export default class App extends Component {
 			<div className='App'>
 				<Section />
 				<Note />
-				<IconButton iconName={addIcon} />
+				<IconButton iconName={addIcon} classes='btn-lg' />
 			</div>
 		);
 	}

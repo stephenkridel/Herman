@@ -12,10 +12,23 @@
 
 .icon {
   filter: invert(90%);
-  height: 35px;
 }
 
 .icon:hover {
   cursor: pointer;
   filter: invert(60%);
+}
+
+.btn-lg {
+  height: 35px;
+  width: 35px;
+}
+
+.btn-sm {
+  height: 15px;
+  width: 15px;
+}
+
+.btn-dark {
+  filter: invert(10%);
 }

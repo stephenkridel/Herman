@@ -1,9 +1,11 @@
 import '../styles/IconButton.css';
 
 const IconButton = props => {
+	const iconClass = `icon ${props.classes}`;
+
 	return (
 		<button className='button' onClick={props.action}>
-			<img className='icon' src={props.iconName} />
+			<img className={iconClass} src={props.iconName} />
 		</button>
 	);
 };
