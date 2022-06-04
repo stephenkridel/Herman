@@ -1,0 +1,10 @@
+.Section-container {
+  position: relative;
+  background-color: cadetblue;
+  box-shadow: 10px 10px 1px black;
+  width: 45%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}

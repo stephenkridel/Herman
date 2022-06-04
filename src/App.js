@@ -1,25 +1,39 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
+
 import './App.css';
+import Note from './components/Note';
+import Section from './components/Section';
+import IconButton from './components/IconButton';
+import SectionBar from './components/SectionBar';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import addIcon from './assets/add.png';
+
+export default class App extends Component {
+	constructor(props) {
+		super(props);
+
+		//this.state = { sectionList: [] };
+		//this.sections = [];
+	}
+
+	/*
+	componentDidUpdate() {
+		this.sections = this.state.sectionList.map(() => <section />);
+	}
+
+	updatesectionList = () => {
+		this.setState(state => ({
+			sectionList: [...state.sectionList, 0]
+		}));
+	};
+ */
+	render() {
+		return (
+			<div className='App'>
+				<Section />
+				<Note />
+				<IconButton iconName={addIcon} />
+			</div>
+		);
+	}
 }
-
-export default App;

@@ -1,0 +1,13 @@
+[
+  {
+    "name":"Subjective", "type": "Section", "blocks": 
+    [
+      {"name": "Depression", "type": "Block", "value": "Patient experienced $input depression.", "variable_options": ["no", "moderate", "severe"], "blocks":[]},
+      {"name": "Depression", "type": "Block", "value": "Patient experienced $input depression.", "variable_options": ["no", "moderate", "severe"], "blocks":[]},
+      {"name": "Depression", "type": "Block", "value": "Patient experienced $input depression.", "variable_options": ["no", "moderate", "severe"], "blocks":
+        [
+          {"name": "Depression", "type": "Block", "value": "Patient experienced $input depression.", "variable_options": ["no", "moderate", "severe"], "blocks":[]}
+        ]}
+    ]
+  }
+]
