@@ -1,38 +1,27 @@
 import React, { Component } from 'react';
+import { Provider } from 'react-redux';
 
 import './App.css';
 import Note from './components/Note';
 import Section from './components/Section';
 import IconButton from './components/IconButton';
-import SectionBar from './components/SectionBar';
 
 import addIcon from './assets/add.png';
+import store from './redux/store';
 
 export default class App extends Component {
 	constructor(props) {
 		super(props);
-
-		//this.state = { sectionList: [] };
-		//this.sections = [];
 	}
 
-	/*
-	componentDidUpdate() {
-		this.sections = this.state.sectionList.map(() => <section />);
-	}
-
-	updatesectionList = () => {
-		this.setState(state => ({
-			sectionList: [...state.sectionList, 0]
-		}));
-	};
- */
 	render() {
 		return (
 			<div className='App'>
-				<Section />
-				<Note />
-				<IconButton iconName={addIcon} classes='btn-lg' />
+				<Provider store={store}>
+					<Section />
+					<Note />
+					<IconButton iconName={addIcon} classes='IconButton-btn-lg' />
+				</Provider>
 			</div>
 		);
 	}
