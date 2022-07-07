@@ -1,7 +1,4 @@
 .IconButton-container {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
   padding: 1px;
   display: flex;
   align-items: center;
@@ -10,8 +7,15 @@
   border: none;
 }
 
-.IconButton-top-right {
-  top: 10px;
+.IconButton-bot-left {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.IconButton-bot-right {
+  position: absolute;
+  bottom: 10px;
   right: 10px;
 }
 
@@ -33,6 +37,11 @@
   width: 35px;
 }
 
+.IconButton-btn-md {
+  height: 17px;
+  width: 17px;
+}
+
 .IconButton-btn-sm {
   height: 15px;
   width: 15px;
@@ -41,3 +50,4 @@
 .IconButton-btn-dark {
   filter: invert(10%);
 }
+

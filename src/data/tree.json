@@ -1,13 +1,122 @@
-[
-  {
-    "name":"Subjective", "type": "Section", "blocks": 
-    [
-      {"name": "Depression", "type": "Block", "value": "Patient experienced $input depression.", "variable_options": ["no", "moderate", "severe"], "blocks":[]},
-      {"name": "Depression", "type": "Block", "value": "Patient experienced $input depression.", "variable_options": ["no", "moderate", "severe"], "blocks":[]},
-      {"name": "Depression", "type": "Block", "value": "Patient experienced $input depression.", "variable_options": ["no", "moderate", "severe"], "blocks":
-        [
-          {"name": "Depression", "type": "Block", "value": "Patient experienced $input depression.", "variable_options": ["no", "moderate", "severe"], "blocks":[]}
-        ]}
+{
+  "root": {
+    "title": "Subjective",
+    "type": "Section",
+    "id": 2384756,
+    "treeStructVersion": "0.0.1",
+    "parentId": null,
+    "children": [
+      {
+        "title": "Depression",
+        "type": "Block",
+        "id": 42342102,
+        "parentId": 2384756,
+        "valueArr": [
+          "Patient experienced ",
+          " depression."
+        ],
+        "variableOptions": [
+          [
+            "no",
+            "moderate",
+            "severe"
+          ]
+        ],
+        "children": [
+          {
+            "title": "Medication",
+            "type": "Block",
+            "valueArr": [
+              "The patient is taking several medications including ",
+              " ",
+              " and ",
+              "."
+            ],
+            "id": 6911461,
+            "parentId": 42342102,
+            "variableOptions": [],
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Medication",
+        "type": "Block",
+        "id": 2839461,
+        "parentId": 2384756,
+        "valueArr": [
+          "Patient is ",
+          " taking their medication as prescribed."
+        ],
+        "variableOptions": [
+          [
+            "not",
+            ""
+          ]
+        ],
+        "children": []
+      },
+      {
+        "title": "Dreams",
+        "type": "Block",
+        "id": 29341,
+        "parentId": 2384756,
+        "valueArr": [
+          "Patient is having ",
+          " dreams. Primarily centered around "
+        ],
+        "variableOptions": [
+          [
+            "good",
+            "bad"
+          ],
+          [
+            "parents",
+            "trauma",
+            "school"
+          ]
+        ],
+        "children": []
+      },
+      {
+        "title": "Anxiety",
+        "type": "Block",
+        "valueArr": [
+          "Patient has ",
+          " some anxiety."
+        ],
+        "id": 3578159,
+        "parentId": 2384756,
+        "variableOptions": [],
+        "children": [
+          {
+            "title": "Medication",
+            "type": "Block",
+            "valueArr": [
+              "Patient takes medication for their anxiety."
+            ],
+            "id": 58981214,
+            "parentId": 3578159,
+            "variableOptions": [],
+            "children": [
+              {
+                "title": "Types",
+                "type": "Block",
+                "valueArr": [
+                  "The types of medication include: ",
+                  " ",
+                  " ",
+                  "."
+                ],
+                "id": 64503227,
+                "parentId": 58981214,
+                "variableOptions": [],
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
     ]
   }
-]
+}

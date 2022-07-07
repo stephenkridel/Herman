@@ -1,28 +1,18 @@
-import React, { Component } from 'react';
-import { Provider } from 'react-redux';
-
-import './App.css';
-import Note from './components/Note';
-import Section from './components/Section';
-import IconButton from './components/IconButton';
-
-import addIcon from './assets/add.png';
+import React from 'react';
+// Redux
 import store from './redux/store';
+import { Provider } from 'react-redux';
+// Components
+import MainScreen from './components/MainScreen';
 
-export default class App extends Component {
-	constructor(props) {
-		super(props);
-	}
+const App = () => {
+	return (
+		<div className='App'>
+			<Provider store={store}>
+				<MainScreen></MainScreen>
+			</Provider>
+		</div>
+	);
+};
 
-	render() {
-		return (
-			<div className='App'>
-				<Provider store={store}>
-					<Section />
-					<Note />
-					<IconButton iconName={addIcon} classes='IconButton-btn-lg' />
-				</Provider>
-			</div>
-		);
-	}
-}
+export default App;

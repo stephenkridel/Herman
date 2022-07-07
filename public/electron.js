@@ -1,7 +1,8 @@
 // Module to control the application lifecycle and the native browser window.
-const { app, BrowserWindow, protocol } = require('electron');
+const { app, BrowserWindow, protocol, ipcMain } = require('electron');
 const path = require('path');
 const url = require('url');
+const fs = require('fs');
 
 // Create the native browser window.
 function createWindow() {
@@ -68,6 +69,7 @@ app.whenReady().then(() => {
 // There, it's common for applications and their menu bar to stay active until
 // the user quits  explicitly with Cmd + Q.
 app.on('window-all-closed', function () {
+	//window.electron.fileSystem.writeFile('./src/data/tree.json', JSON.stringify(newTree));
 	if (process.platform !== 'darwin') {
 		app.quit();
 	}
@@ -87,5 +89,25 @@ app.on('web-contents-created', (event, contents) => {
 	});
 });
 
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and require them here.
+// function used to write files primarily to ./src/data/tree.json
+// to save built blocks. The react components need access to the main
+// thread to us the filesystem. This function is exposed in preload.js
+ipcMain.on('write-file', (_, content) => {
+	let path = app.getPath('userData');
+	fs.writeFile(`${path}/tree.json`, content, function () {
+		return 0;
+	});
+});
+
+// function used to get the path to userData folder.
+// This function is exposed in preload.js
+ipcMain.handle('get-path', () => {
+	let path = app.getPath('userData');
+	return path;
+});
+
+ipcMain.handle('read-file', () => {
+	let path = app.getPath('userData');
+	let data = fs.readFileSync(`${path}/tree.json`);
+	return data;
+});

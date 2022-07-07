@@ -1,11 +1,11 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import blockListSlice from './blockListSlice';
+import sectionSlice from './sectionSlice';
 import blockSlice from './blockSlice';
 import noteSlice from './noteSlice';
 
 const rootReducer = combineReducers({
 	block: blockSlice.reducer,
-	blockList: blockListSlice.reducer,
+	section: sectionSlice.reducer,
 	note: noteSlice.reducer
 });
 

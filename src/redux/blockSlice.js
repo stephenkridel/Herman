@@ -5,6 +5,7 @@ const blockSlice = createSlice({
 	initialState: {
 		title: '',
 		text: '',
+		blocks: [],
 		variables: []
 	},
 	reducers: {

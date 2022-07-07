@@ -2,7 +2,7 @@
   position: relative;
   width: 60%;
   height: 10%;
-  margin: 3%;
+  margin: 2%;
   padding: 0% 2% 0% 2%;
   border-radius: 5px;
   background-color: azure;
@@ -14,10 +14,17 @@
 
 .Text-container {
   height: 100%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-around;
   overflow: hidden;
   margin: 0 1rem 0 1rem;
+}
+
+.Block-icon-container {
+  display: flex;
+  justify-content: space-between;
+  width: 25%;
 }

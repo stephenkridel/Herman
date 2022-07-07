@@ -45,7 +45,7 @@
   "devDependencies": {
     "concurrently": "^7.2.1",
     "cross-env": "^7.0.3",
-    "electron": "^19.0.1",
+    "electron": "^19.0.0",
     "electron-builder": "^23.0.3",
     "electronmon": "^2.0.2",
     "wait-on": "^6.0.1"

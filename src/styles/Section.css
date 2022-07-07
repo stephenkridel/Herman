@@ -8,3 +8,9 @@
   flex-direction: column;
   align-items: flex-start;
 }
+
+.Section-button-container {
+  display: flex;
+  position: absolute;
+  bottom: 10px;
+}

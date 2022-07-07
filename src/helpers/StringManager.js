@@ -24,7 +24,7 @@ export default class StringManager {
 		for (let i = 0; i < inputArr.length; i++) {
 			outputStr += strArr[i] + inputArr[i];
 		}
-		outputStr += strArr[i];
+		outputStr += strArr[inputArr.length];
 		return outputStr;
 	};
 }

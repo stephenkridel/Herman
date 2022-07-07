@@ -1,14 +1,21 @@
 import React, { useState } from 'react';
-import '../styles/Modal.css';
-import closeIcon from '../assets/close.png';
+// Components & Fonts
 import IconButton from './IconButton';
+import closeIcon from '../assets/close.png';
+import '../styles/Modal.css';
 
 const Modal = props => {
+	// local state
 	const [blockTitle, setBlockTitle] = useState('');
 	const [blockText, setBlockText] = useState('');
-	const handleSubmit = () => props.handleFormSubmit(blockText, blockTitle);
+
+	// needed to make local state work with react form element
 	const handleTitleChange = e => setBlockTitle(e.target.value);
 	const handleTextChange = e => setBlockText(e.target.value);
+
+	// passing state up to parent (the block)
+	const handleSubmit = () => props.handleFormSubmit(blockText, blockTitle);
+
 	return (
 		<div className={`Modal-outer-container ${props.classes}`}>
 			<div className={'Modal-inner-container'}>
