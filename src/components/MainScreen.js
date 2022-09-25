@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Note from '../components/Note';
 import Section from '../components/Section';
 import IconButton from '../components/IconButton';
+import Notify from '../components/Notify';
 // Icons
 import saveIcon from '../assets/save.png';
 // Styles
@@ -19,6 +20,7 @@ const MainScreen = () => {
 	// Used to render a blank screen until the tree structure is
 	// loaded into state from the user's file system
 	const [isLoading, setIsLoading] = useState(true);
+	const [showNotificaiton, setShowNotification] = useState(false);
 
 	// Capture the state of the tree structure so that it can be saved
 	const treeState = useSelector(state => state.section.tree);
@@ -32,7 +34,11 @@ const MainScreen = () => {
 
 	async function saveStateToDisk() {
 		window.electron.writeFile(JSON.stringify(treeState));
-		console.log(treeState);
+
+		setShowNotification(true);
+		setTimeout(() => {
+			setShowNotification(false);
+		}, 4000);
 	}
 
 	useEffect(() => {
@@ -49,6 +55,7 @@ const MainScreen = () => {
 					classes='IconButton-btn-lg IconButton-bot-right'
 					action={saveStateToDisk}
 				/>
+				{showNotificaiton ? <Notify message={'Saved'} /> : null}
 			</div>
 		);
 	} else if (isLoading) {
