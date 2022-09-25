@@ -20,7 +20,6 @@ const Block = props => {
 	const title = props.block.title;
 	const [text, setText] = useState('');
 	const [showVariableModal, setShowVariableModal] = useState(false);
-	const [variableSelections, setVariableSelections] = useState();
 
 	// this is just for the visual display of text
 	const buildDisplayText = text => {

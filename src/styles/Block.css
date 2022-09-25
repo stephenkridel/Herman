@@ -4,12 +4,13 @@
   height: 10%;
   margin: 2%;
   padding: 0% 2% 0% 2%;
-  border-radius: 5px;
   background-color: azure;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  box-shadow: 5px 5px 1px black;
+  border: 1px #282c34 solid;
 }
 
 .Text-container {

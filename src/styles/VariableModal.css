@@ -19,24 +19,30 @@
 }
 
 .VariableModal-inner-container {
-  background-color: thistle;
+  background-color: rgb(255, 142, 101);
   min-width: 30%;
-  height: 40%;
+  height: auto;
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  border: 1px #282c34 solid;
 }
 
 .VariableModal-header {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .VariableModal-form-label {
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 .VariableModal-button {
   background-color: 'white';
   display: flex;
   flex-direction: column;
-  height: 10%;
+  padding: 0.2rem;
   width: auto;
+  margin: 0.25rem 0 0.25rem 0;
 }

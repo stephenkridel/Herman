@@ -6,8 +6,15 @@ const VariableModal = props => {
 	const [loopIdx, setLoopIdx] = useState(0);
 	const [returnArr, setReturnArr] = useState([]);
 
+	let valueArr = props.block.valueArr;
+	let variableOptions = props.block.variableOptions;
+
+	let header = `${valueArr[loopIdx]} ... ${
+		loopIdx !== valueArr.length ? valueArr[loopIdx + 1] : ''
+	}`;
+
 	useEffect(() => {
-		if (loopIdx === props.block.variableOptions.length) {
+		if (loopIdx === variableOptions.length) {
 			returnVariables(returnArr);
 		}
 	}, [loopIdx]);
@@ -16,20 +23,24 @@ const VariableModal = props => {
 		props.returnVariables(returnArr);
 	};
 
-	if (loopIdx < props.block.variableOptions.length) {
+	const selectOption = option => {
+		return function () {
+			setReturnArr(state => [...state, option]);
+			setLoopIdx(loopIdx + 1);
+		};
+	};
+
+	if (loopIdx < variableOptions.length) {
 		return (
 			<div className={`VariableModal-outer-container VariableModal-show`}>
 				<div className={'VariableModal-inner-container'}>
-					<h1 className={'VariableModal-header'}>{props.block.valueArr[loopIdx] + '...'}</h1>
-					{props.block.variableOptions[loopIdx].map(option => {
+					<h1 className={'VariableModal-header'}>{header}</h1>
+					{variableOptions[loopIdx].map(option => {
 						return (
 							<button
 								className={'VariableModal-button'}
 								key={option}
-								onClick={() => {
-									setReturnArr(state => [...state, option]);
-									setLoopIdx(loopIdx + 1);
-								}}
+								onClick={selectOption(option)}
 							>
 								{option}
 							</button>

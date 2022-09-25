@@ -19,16 +19,17 @@
 }
 
 .Modal-inner-container {
-  background-color: thistle;
+  background-color: rgb(255, 142, 101);
   min-width: 30%;
-  height: 40%;
+  height: auto;
   padding: 1rem;
+  border: 1px #282c34 solid;
 }
 
 .Modal-header {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .Modal-form-label {
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
