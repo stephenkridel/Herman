@@ -32,9 +32,9 @@ const Block = props => {
 
 	const returnVariables = selections => {
 		setShowVariableModal(false);
-		console.log(selections);
 		let newStr = StringManager.rebuild(props.block.valueArr, selections);
 		dispatch(addText(newStr));
+		renderNext();
 	};
 
 	const addToNote = () => {
@@ -44,6 +44,15 @@ const Block = props => {
 			setShowVariableModal(true);
 		} else {
 			dispatch(addText(props.block.valueArr[0]));
+			renderNext();
+		}
+	};
+
+	const renderNext = () => {
+		if (props.block.children.length > 0) {
+			props.renderChildren();
+		} else {
+			props.renderParent();
 		}
 	};
 
@@ -66,8 +75,10 @@ const Block = props => {
 					iconName={trashIcon}
 				/>
 				<div className='Text-container'>
-					<h1 className='Font-md Font-dark'>{title}</h1>
-					<h2 className='Font-sm Font-dark'>{text}</h2>
+					<h1 className='Font-md Font-dark Block-header'>{title}</h1>
+					<div className='Block-text'>
+						<h2 className='Font-sm Font-dark Block-text'>{text}</h2>
+					</div>
 				</div>
 				<div className='Block-icon-container'>
 					<IconButton

@@ -27,9 +27,5 @@
 }
 
 .Modal-header {
-  font-size: 1rem;
-}
-
-.Modal-form-label {
-  font-size: 1rem;
+  padding-bottom: 1rem;
 }

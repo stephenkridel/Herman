@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import IconButton from './IconButton';
 import closeIcon from '../assets/close.png';
 import '../styles/Modal.css';
+import '../styles/Font.css';
 
 const Modal = props => {
 	// local state
@@ -20,15 +21,15 @@ const Modal = props => {
 		<div className={`Modal-outer-container ${props.classes}`}>
 			<div className={'Modal-inner-container'}>
 				<IconButton src={closeIcon} action={props.onClose} />
-				<h1 className={'Modal-header'}>{props.header}</h1>
+				<h1 className={'Font-lg Modal-header'}>{props.header}</h1>
 				{props.blockCreation === true && (
 					<>
 						<form onSubmit={handleSubmit}>
-							<label className='Modal-form-label'>Title:</label>
+							<label className='Font-lg'>Title:</label>
 							<br />
 							<input type='text' name='title' value={blockTitle} onChange={handleTitleChange} />
 							<br />
-							<label className='Modal-form-label'>Text:</label>
+							<label className='Font-lg'>Text:</label>
 							<br />
 							<input type='text' name='value' value={blockText} onChange={handleTextChange} />
 							<br />

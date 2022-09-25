@@ -74,6 +74,7 @@ const Section = () => {
 					key={block.id}
 					block={block}
 					renderChildren={renderChildren(block)}
+					renderParent={renderParent}
 					closeAction={removeBlock(block.id)}
 				/>
 			))}

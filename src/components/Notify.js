@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 // Styles
 import '../styles/Notify.css';
 import '../styles/Font.css';

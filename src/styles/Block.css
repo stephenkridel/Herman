@@ -29,3 +29,12 @@
   justify-content: space-between;
   width: 25%;
 }
+
+.Block-header {
+  white-space: nowrap;
+}
+
+.Block-text {
+  line-height: 1.5em;
+  overflow: hidden;
+}

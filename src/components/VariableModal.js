@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 // Components & Fonts
 import '../styles/VariableModal.css';
+import '../styles/Font.css';
 
 const VariableModal = props => {
 	const [loopIdx, setLoopIdx] = useState(0);
@@ -34,7 +35,7 @@ const VariableModal = props => {
 		return (
 			<div className={`VariableModal-outer-container VariableModal-show`}>
 				<div className={'VariableModal-inner-container'}>
-					<h1 className={'VariableModal-header'}>{header}</h1>
+					<h1 className={'VariableModal-header Font-lg'}>{header}</h1>
 					{variableOptions[loopIdx].map(option => {
 						return (
 							<button
