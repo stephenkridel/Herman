@@ -49,15 +49,19 @@ const Section = () => {
 	};
 
 	const formatNewBlock = (formText, formTitle) => {
+		let [valueArr, varArr] = StringManager.extract(formText);
+		let id = Math.floor(Math.random() * 99999999);
+
 		let newBlock = {
 			title: formTitle,
 			type: 'Block',
-			valueArr: StringManager.extract(formText),
-			id: Math.floor(Math.random() * 99999999),
+			valueArr: valueArr,
+			id: id,
 			parentId: currentBlock.id,
-			variableOptions: [],
+			variableOptions: varArr,
 			children: []
 		};
+
 		dispatch(addBlock(newBlock));
 		setShouldShow('Modal-hide');
 	};

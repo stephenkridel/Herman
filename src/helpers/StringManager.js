@@ -2,29 +2,51 @@ export default class StringManager {
 	// used to pull out strings from an input when a
 	// user wants to use a variable denoted by typing $_
 	static extract = string => {
-		string = string + '$_';
 		let strArr = [];
+		let varArr = [];
 		let current = '';
+		let currentArr = [];
+		let isVar = false;
+
 		for (let i = 0; i < string.length; i++) {
-			if (string[i] === '$' && string[i + 1] === '_') {
+			if (string[i] === '[') {
 				strArr.push(current);
 				current = '';
-				i++;
+				isVar = true;
+			} else if (isVar) {
+				if (string[i] === ']') {
+					currentArr.push(current);
+					current = '';
+					varArr.push(currentArr);
+					currentArr = [];
+					isVar = false;
+				} else if (string[i] === '|') {
+					currentArr.push(current);
+					current = '';
+				} else {
+					current += string[i];
+				}
 			} else {
 				current += string[i];
 			}
 		}
-		return strArr;
+
+		if (current.length > 0) strArr.push(current);
+
+		return [strArr, varArr];
 	};
+
+	// This is some static text with [some|many|none] variables.
 
 	// rebuilds a string to add to a Note using an array
 	// of inputs and an array of extracted strings
-	static rebuild = (strArr, inputArr) => {
+	static rebuild = (strArr, varArr) => {
 		let outputStr = '';
-		for (let i = 0; i < inputArr.length; i++) {
-			outputStr += strArr[i] + inputArr[i];
+		let len = strArr.length > varArr.length ? strArr.length : varArr.length;
+		for (let i = 0; i < len; i++) {
+			if (strArr[i] !== undefined) outputStr += strArr[i];
+			if (varArr[i] !== undefined) outputStr += varArr[i];
 		}
-		outputStr += strArr[inputArr.length];
 		return outputStr;
 	};
 }

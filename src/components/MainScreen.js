@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 // Redux
-import store from '../redux/store';
-import { useDispatch, useSelector } from 'react-redux';
 import { updateTree } from '../redux/sectionSlice';
+import { useDispatch, useSelector } from 'react-redux';
 // Components
 import Note from '../components/Note';
 import Section from '../components/Section';
@@ -10,7 +9,7 @@ import IconButton from '../components/IconButton';
 // Icons
 import saveIcon from '../assets/save.png';
 // Styles
-import '../styles/App.css';
+import '../styles/MainScreen.css';
 // Helpers
 import getSavedData from '../helpers/initializeTree';
 
@@ -42,7 +41,7 @@ const MainScreen = () => {
 
 	if (!isLoading) {
 		return (
-			<div className='App'>
+			<div className='MainScreen'>
 				<Section />
 				<Note />
 				<IconButton

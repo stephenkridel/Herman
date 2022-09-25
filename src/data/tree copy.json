@@ -1,0 +1,124 @@
+{
+  "root": {
+    "title": "Subjective",
+    "type": "Section",
+    "id": 2384756,
+    "parentId": null,
+    "children": [
+      {
+        "title": "Depression",
+        "type": "Block",
+        "id": 42342102,
+        "parentId": 2384756,
+        "valueArr": [
+          "Patient experienced ",
+          " depression."
+        ],
+        "variableOptions": [
+          [
+            "no",
+            "moderate",
+            "severe"
+          ]
+        ],
+        "children": []
+      },
+      {
+        "title": "Medication",
+        "type": "Block",
+        "id": 2839461,
+        "parentId": 2384756,
+        "valueArr": [
+          "Patient is ",
+          " taking their medication as prescribed."
+        ],
+        "variableOptions": [
+          [
+            "not",
+            ""
+          ]
+        ],
+        "children": [
+          {
+            "title": "Watches2",
+            "type": "Block",
+            "id": 38472,
+            "parentId": 2839461,
+            "valueArr": [
+              "Patient found the really ",
+              " really expensive watches."
+            ],
+            "variableOptions": [
+              [
+                "no",
+                "moderate",
+                "severe"
+              ]
+            ],
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Dreams",
+        "type": "Block",
+        "id": 29341,
+        "parentId": 2384756,
+        "valueArr": [
+          "Patient is having ",
+          " dreams. Primarily centered around "
+        ],
+        "variableOptions": [
+          [
+            "good",
+            "bad"
+          ],
+          [
+            "parents",
+            "trauma",
+            "school"
+          ]
+        ],
+        "children": [
+          {
+            "title": "Watches",
+            "type": "Block",
+            "id": 384,
+            "parentId": 29341,
+            "valueArr": [
+              "Patient found the really ",
+              " really expensive watches."
+            ],
+            "variableOptions": [
+              [
+                "no",
+                "moderate",
+                "severe"
+              ]
+            ],
+            "children": [
+              {
+                "title": "Depression",
+                "type": "Block",
+                "id": 42342102,
+                "parentId": 384,
+                "valueArr": [
+                  "Patient experienced ",
+                  " depression."
+                ],
+                "variableOptions": [
+                  [
+                    "no",
+                    "moderate",
+                    "severe"
+                  ]
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
