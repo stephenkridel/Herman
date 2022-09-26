@@ -1,5 +1,4 @@
-# Herman, the EMR-Builder
-## an electronic medical record builder for therapists
+# Herman, an electronic medical record builder for therapists
 
 ### Purpose
 
