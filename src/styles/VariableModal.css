@@ -19,10 +19,10 @@
 }
 
 .VariableModal-inner-container {
-  background-color: rgb(255, 142, 101);
+  background-color: #d5e5ea;
   min-width: 30%;
   height: auto;
-  padding: 1rem;
+  padding: 2rem 1rem 2rem 1rem;
   border: 1px #282c34 solid;
 }
 
@@ -30,8 +30,9 @@
   background-color: 'white';
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 0.2rem;
-  width: auto;
+  width: 40%;
   margin: 0.25rem 0 0.25rem 0;
 }
 

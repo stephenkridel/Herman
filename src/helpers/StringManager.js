@@ -20,7 +20,8 @@ export default class StringManager {
 					varArr.push(currentArr);
 					currentArr = [];
 					isVar = false;
-				} else if (string[i] === '|') {
+				} else if (string[i] === ',') {
+					if (string[i + 1] === ' ') i++;
 					currentArr.push(current);
 					current = '';
 				} else {
@@ -44,8 +45,8 @@ export default class StringManager {
 		let outputStr = '';
 		let len = strArr.length > varArr.length ? strArr.length : varArr.length;
 		for (let i = 0; i < len; i++) {
-			if (strArr[i] !== undefined) outputStr += strArr[i];
-			if (varArr[i] !== undefined) outputStr += varArr[i];
+			if (strArr[i]) outputStr += strArr[i];
+			if (varArr[i]) outputStr += varArr[i];
 		}
 		return outputStr;
 	};

@@ -1,5 +1,5 @@
 {
-  "name": "emr-builder",
+  "name": "Herman",
   "version": "0.1.0",
   "private": true,
   "author": "Stephen Kridel",
@@ -51,8 +51,8 @@
     "wait-on": "^6.0.1"
   },
   "build": {
-    "appId": "com.electron.myapp",
-    "productName": "My Electron App",
+    "appId": "team.rocketcafe.herman",
+    "productName": "Herman",
     "files": [
       "build/**/*",
       "node_modules/**/*"

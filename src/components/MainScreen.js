@@ -11,6 +11,7 @@ import Notify from '../components/Notify';
 import saveIcon from '../assets/save.png';
 // Styles
 import '../styles/MainScreen.css';
+import '../styles/Font.css';
 // Helpers
 import getSavedData from '../helpers/initializeTree';
 

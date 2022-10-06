@@ -3,21 +3,20 @@
     "title": "Subjective",
     "type": "Section",
     "id": 2384756,
-    "treeStructVersion": "0.0.1",
     "parentId": null,
     "children": [
       {
         "title": "Depression",
         "type": "Block",
-        "id": 42342102,
-        "parentId": 2384756,
         "valueArr": [
-          "Patient experienced ",
+          "Patient is experiencing ",
           " depression."
         ],
+        "id": 10826076,
+        "parentId": 2384756,
         "variableOptions": [
           [
-            "no",
+            "mild",
             "moderate",
             "severe"
           ]
@@ -27,95 +26,173 @@
             "title": "Medication",
             "type": "Block",
             "valueArr": [
-              "The patient is taking several medications including ",
-              " ",
-              " and ",
+              "Patient should be on ",
+              " of ",
               "."
             ],
-            "id": 6911461,
-            "parentId": 42342102,
-            "variableOptions": [],
+            "id": 53418316,
+            "parentId": 10826076,
+            "variableOptions": [
+              [
+                "80mg",
+                "100mg",
+                "200mg"
+              ],
+              [
+                "med1",
+                "med2",
+                "med3"
+              ]
+            ],
+            "children": [
+              {
+                "title": "Monitoring",
+                "type": "Block",
+                "valueArr": [
+                  "Patient ",
+                  " be monitored on medication."
+                ],
+                "id": 80042065,
+                "parentId": 53418316,
+                "variableOptions": [
+                  [
+                    "should",
+                    "should not"
+                  ]
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "title": "Anxiety & Depression",
+            "type": "Block",
+            "valueArr": [
+              "Patient ",
+              " experiencing anxiety with depression."
+            ],
+            "id": 48970136,
+            "parentId": 10826076,
+            "variableOptions": [
+              [
+                "is",
+                "is not"
+              ]
+            ],
             "children": []
           }
         ]
       },
       {
-        "title": "Medication",
-        "type": "Block",
-        "id": 2839461,
-        "parentId": 2384756,
-        "valueArr": [
-          "Patient is ",
-          " taking their medication as prescribed."
-        ],
-        "variableOptions": [
-          [
-            "not",
-            ""
-          ]
-        ],
-        "children": []
-      },
-      {
-        "title": "Dreams",
-        "type": "Block",
-        "id": 29341,
-        "parentId": 2384756,
-        "valueArr": [
-          "Patient is having ",
-          " dreams. Primarily centered around "
-        ],
-        "variableOptions": [
-          [
-            "good",
-            "bad"
-          ],
-          [
-            "parents",
-            "trauma",
-            "school"
-          ]
-        ],
-        "children": []
-      },
-      {
         "title": "Anxiety",
         "type": "Block",
         "valueArr": [
-          "Patient has ",
-          " some anxiety."
+          "Patient is experiencing ",
+          " anxiety."
         ],
-        "id": 3578159,
+        "id": 57078313,
         "parentId": 2384756,
-        "variableOptions": [],
+        "variableOptions": [
+          [
+            "mild",
+            "moderate",
+            "severe"
+          ]
+        ],
         "children": [
           {
             "title": "Medication",
             "type": "Block",
             "valueArr": [
-              "Patient takes medication for their anxiety."
+              "Patient ",
+              " be on medication."
             ],
-            "id": 58981214,
-            "parentId": 3578159,
-            "variableOptions": [],
-            "children": [
-              {
-                "title": "Types",
-                "type": "Block",
-                "valueArr": [
-                  "The types of medication include: ",
-                  " ",
-                  " ",
-                  "."
-                ],
-                "id": 64503227,
-                "parentId": 58981214,
-                "variableOptions": [],
-                "children": []
-              }
-            ]
+            "id": 58134192,
+            "parentId": 57078313,
+            "variableOptions": [
+              [
+                "should",
+                "should not"
+              ]
+            ],
+            "children": []
           }
         ]
+      },
+      {
+        "title": "Dreams",
+        "type": "Block",
+        "valueArr": [
+          "Patient is having ",
+          " dreams."
+        ],
+        "id": 55318091,
+        "parentId": 2384756,
+        "variableOptions": [
+          [
+            "good",
+            "bad",
+            "regular"
+          ]
+        ],
+        "children": [
+          {
+            "title": "Medication",
+            "type": "Block",
+            "valueArr": [
+              "Patient ",
+              " need medication for their dreams."
+            ],
+            "id": 80646021,
+            "parentId": 55318091,
+            "variableOptions": [
+              [
+                "does",
+                "doesn't"
+              ]
+            ],
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Social",
+        "type": "Block",
+        "valueArr": [
+          "Patient ",
+          " feeling good in social situations."
+        ],
+        "id": 21897164,
+        "parentId": 2384756,
+        "variableOptions": [
+          [
+            "is",
+            "is not"
+          ]
+        ],
+        "children": []
+      },
+      {
+        "title": "Sadness",
+        "type": "Block",
+        "valueArr": [
+          "Patient ",
+          " feeling sad. Medication ",
+          " recommended."
+        ],
+        "id": 39699743,
+        "parentId": 2384756,
+        "variableOptions": [
+          [
+            "is",
+            "is not"
+          ],
+          [
+            "is",
+            "is not"
+          ]
+        ],
+        "children": []
       }
     ]
   }

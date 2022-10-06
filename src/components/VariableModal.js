@@ -11,7 +11,7 @@ const VariableModal = props => {
 	let variableOptions = props.block.variableOptions;
 
 	let header = `${valueArr[loopIdx]} ... ${
-		loopIdx !== valueArr.length ? valueArr[loopIdx + 1] : ''
+		loopIdx !== valueArr.length - 1 ? valueArr[loopIdx + 1] : ''
 	}`;
 
 	useEffect(() => {

@@ -48,12 +48,9 @@ const Block = props => {
 		}
 	};
 
+	// add in renderParent if on children or sibilings
 	const renderNext = () => {
-		if (props.block.children.length > 0) {
-			props.renderChildren();
-		} else {
-			props.renderParent();
-		}
+		if (props.block.children.length > 0) props.renderChildren();
 	};
 
 	// runs when the block UI gets displayed, builds
