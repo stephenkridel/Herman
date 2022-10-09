@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 // Data
 //import { default as savedData } from '../data/tree.json';
 // Helpers
-import TreeOperations from '../helpers/TreeOperations';
+import { traverse, remove, add } from '../helpers/TreeOperations';
 import { default as defaultTree } from '../data/tree.json';
 
 // This is a main workhorse for the app. The currentBlock property contains
@@ -18,7 +18,7 @@ const sectionSlice = createSlice({
 	},
 	reducers: {
 		addBlock: (state, action) => {
-			let newTree = TreeOperations.add(state.currentBlock.id, action.payload, state.tree);
+			let newTree = add(state.currentBlock.id, action.payload, state.tree);
 			return {
 				...state,
 				currentBlock: {
@@ -37,15 +37,11 @@ const sectionSlice = createSlice({
 		renderReduxParent: (state, action) => {
 			return {
 				...state,
-				currentBlock: TreeOperations.traverse(state.currentBlock.parentId, state.tree)
+				currentBlock: traverse(state.currentBlock.parentId, state.tree)
 			};
 		},
 		filterBlocks: (state, action) => {
-			let [newTree, node] = TreeOperations.remove(
-				action.payload,
-				state.currentBlock.id,
-				state.tree
-			);
+			let [newTree, node] = remove(action.payload, state.currentBlock.id, state.tree);
 			return {
 				...state,
 				currentBlock: { ...state.currentBlock, children: node.children },
