@@ -6,13 +6,13 @@ import { Provider } from 'react-redux';
 import MainScreen from './components/MainScreen';
 
 const App = () => {
-	return (
-		<div className='App'>
-			<Provider store={store}>
-				<MainScreen></MainScreen>
-			</Provider>
-		</div>
-	);
+  return (
+    <div className='App'>
+      <Provider store={store}>
+        <MainScreen></MainScreen>
+      </Provider>
+    </div>
+  );
 };
 
 export default App;

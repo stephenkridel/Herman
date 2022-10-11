@@ -16,82 +16,82 @@ import '../styles/Block.css';
 import StringManager from '../helpers/StringManager';
 
 const Block = props => {
-	const dispatch = useDispatch();
-	const title = props.block.title;
-	const [text, setText] = useState('');
-	const [showVariableModal, setShowVariableModal] = useState(false);
+  const dispatch = useDispatch();
+  const title = props.block.title;
+  const [text, setText] = useState('');
+  const [showVariableModal, setShowVariableModal] = useState(false);
 
-	// this is just for the visual display of text
-	const buildDisplayText = text => {
-		let outputStr = '';
-		text.forEach(element => {
-			outputStr += element;
-		});
-		return outputStr;
-	};
+  // this is just for the visual display of text
+  const buildDisplayText = text => {
+    let outputStr = '';
+    text.forEach(element => {
+      outputStr += element;
+    });
+    return outputStr;
+  };
 
-	const returnVariables = selections => {
-		setShowVariableModal(false);
-		let newStr = StringManager.rebuild(props.block.valueArr, selections);
-		dispatch(addText(newStr));
-		renderNext();
-	};
+  const returnVariables = selections => {
+    setShowVariableModal(false);
+    let newStr = StringManager.rebuild(props.block.valueArr, selections);
+    dispatch(addText(newStr));
+    renderNext();
+  };
 
-	const addToNote = () => {
-		if (props.block.variableOptions.length > 0) {
-			// this function opens the VariableModal and runs a loop
-			// that collects user selections for variables and passes
-			setShowVariableModal(true);
-		} else {
-			dispatch(addText(props.block.valueArr[0]));
-			renderNext();
-		}
-	};
+  const addToNote = () => {
+    if (props.block.variableOptions.length > 0) {
+      // this function opens the VariableModal and runs a loop
+      // that collects user selections for variables and passes
+      setShowVariableModal(true);
+    } else {
+      dispatch(addText(props.block.valueArr[0]));
+      renderNext();
+    }
+  };
 
-	// add in renderParent if on children or sibilings
-	const renderNext = () => {
-		if (props.block.children.length > 0) props.renderChildren();
-	};
+  // add in renderParent if on children or sibilings
+  const renderNext = () => {
+    if (props.block.children.length > 0) props.renderChildren();
+  };
 
-	// runs when the block UI gets displayed, builds
-	// the description portion of the block UI element
-	useEffect(() => {
-		let text = buildDisplayText(props.block.valueArr);
-		setText(text);
-	}, []);
+  // runs when the block UI gets displayed, builds
+  // the description portion of the block UI element
+  useEffect(() => {
+    let text = buildDisplayText(props.block.valueArr);
+    setText(text);
+  }, []);
 
-	return (
-		<>
-			{showVariableModal ? (
-				<VariableModal block={props.block} returnVariables={returnVariables} />
-			) : null}
-			<div className='Block-container'>
-				<IconButton
-					classes='IconButton-btn-sm IconButton-btn-dark IconButton-static'
-					action={props.closeAction}
-					iconName={trashIcon}
-				/>
-				<div className='Text-container'>
-					<h1 className='Font-md Font-dark Block-header'>{title}</h1>
-					<div className='Block-text'>
-						<h2 className='Font-sm Font-dark Block-text'>{text}</h2>
-					</div>
-				</div>
-				<div className='Block-icon-container'>
-					<IconButton
-						classes='IconButton-btn-md IconButton-btn-dark IconButton-static'
-						action={addToNote}
-						iconName={addIcon}
-					/>
-					<IconButton
-						classes='IconButton-btn-md IconButton-btn-dark IconButton-static'
-						action={props.renderChildren}
-						iconName={arrowForwardIcon}
-					/>
-				</div>
-			</div>
-		</>
-	);
+  return (
+    <>
+      {showVariableModal ? (
+        <VariableModal block={props.block} returnVariables={returnVariables} />
+      ) : null}
+      <div className='Block-container'>
+        <IconButton
+          classes='IconButton-btn-sm IconButton-btn-dark IconButton-static'
+          action={props.closeAction}
+          iconName={trashIcon}
+        />
+        <div className='Text-container'>
+          <h1 className='Font-md Font-dark Block-header'>{title}</h1>
+          <div className='Block-text'>
+            <h2 className='Font-sm Font-dark Block-text'>{text}</h2>
+          </div>
+        </div>
+        <div className='Block-icon-container'>
+          <IconButton
+            classes='IconButton-btn-md IconButton-btn-dark IconButton-static'
+            action={addToNote}
+            iconName={addIcon}
+          />
+          <IconButton
+            classes='IconButton-btn-md IconButton-btn-dark IconButton-static'
+            action={props.renderChildren}
+            iconName={arrowForwardIcon}
+          />
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default Block;

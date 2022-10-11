@@ -5,21 +5,21 @@ import { userUpdateNote } from '../redux/noteSlice';
 import '../styles/Note.css';
 
 const Note = () => {
-	const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-	const text = useSelector(state => state.note.text);
+  const text = useSelector(state => state.note.text);
 
-	const handleTextChange = e => {
-		dispatch(userUpdateNote(e.target.value));
-	};
+  const handleTextChange = e => {
+    dispatch(userUpdateNote(e.target.value));
+  };
 
-	return (
-		<div className='Note-container'>
-			<form>
-				<textarea type='text' name='Note-text' value={text} onChange={handleTextChange} />
-			</form>
-		</div>
-	);
+  return (
+    <div className='Note-container'>
+      <form>
+        <textarea type='text' name='Note-text' value={text} onChange={handleTextChange} />
+      </form>
+    </div>
+  );
 };
 
 export default Note;
