@@ -17,7 +17,7 @@ import arrowBackwardIcon from '../assets/arrow-backward.png';
 // Styles
 import '../styles/Section.css';
 // Helpers
-import StringManager from '../helpers/StringManager';
+import { extractStrings } from '../helpers/stringManager';
 
 const Section = () => {
   const dispatch = useDispatch();
@@ -49,7 +49,7 @@ const Section = () => {
   };
 
   const formatNewBlock = (formText, formTitle) => {
-    let [valueArr, varArr] = StringManager.extract(formText);
+    let [valueArr, varArr] = extractStrings(formText);
     let id = Math.floor(Math.random() * 99999999);
 
     let newBlock = {
@@ -79,12 +79,8 @@ const Section = () => {
         />
       ))}
       <div className='Section-button-container'>
-        <IconButton iconName={addIcon} classes='IconButton-btn-lg' action={toggleModal} />
-        <IconButton
-          iconName={arrowBackwardIcon}
-          classes='IconButton-btn-lg'
-          action={renderParent}
-        />
+        <IconButton iconName={addIcon} classes='IconButton-lg' action={toggleModal} />
+        <IconButton iconName={arrowBackwardIcon} classes='IconButton-lg' action={renderParent} />
       </div>
       <Modal
         classes={shouldShow}

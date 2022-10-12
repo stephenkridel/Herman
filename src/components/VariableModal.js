@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react';
-// Components & Fonts
+// Components
+import IconButton from './IconButton';
+// Icons & Styles
 import '../styles/VariableModal.css';
+import '../styles/IconButton.css';
 import '../styles/Font.css';
+import closeIcon from '../assets/close.png';
 
 const VariableModal = props => {
   const [loopIdx, setLoopIdx] = useState(0);
@@ -24,6 +28,10 @@ const VariableModal = props => {
     props.returnVariables(returnArr);
   };
 
+  const returnNull = () => {
+    props.returnVariables(null);
+  };
+
   const selectOption = option => {
     return function () {
       setReturnArr(state => [...state, option]);
@@ -35,6 +43,11 @@ const VariableModal = props => {
     return (
       <div className={`VariableModal-outer-container VariableModal-show`}>
         <div className={'VariableModal-inner-container'}>
+          <IconButton
+            iconName={closeIcon}
+            classes='IconButton-lg IconButton-dark IconButton-md IconButton-top-left'
+            action={returnNull}
+          />
           <h1 className={'VariableModal-header Font-lg'}>{header}</h1>
           {variableOptions[loopIdx].map(option => {
             return (

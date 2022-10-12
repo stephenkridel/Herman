@@ -13,7 +13,7 @@ import arrowForwardIcon from '../assets/arrow-forward.png';
 import '../styles/Font.css';
 import '../styles/Block.css';
 // Helpers
-import StringManager from '../helpers/StringManager';
+import { rebuildText } from '../helpers/stringManager';
 
 const Block = props => {
   const dispatch = useDispatch();
@@ -32,9 +32,11 @@ const Block = props => {
 
   const returnVariables = selections => {
     setShowVariableModal(false);
-    let newStr = StringManager.rebuild(props.block.valueArr, selections);
-    dispatch(addText(newStr));
-    renderNext();
+    if (selections != null) {
+      let newStr = rebuildText(props.block.valueArr, selections);
+      dispatch(addText(newStr));
+      renderNext();
+    }
   };
 
   const addToNote = () => {
@@ -67,7 +69,7 @@ const Block = props => {
       ) : null}
       <div className='Block-container'>
         <IconButton
-          classes='IconButton-btn-sm IconButton-btn-dark IconButton-static'
+          classes='IconButton-sm IconButton-dark IconButton-static'
           action={props.closeAction}
           iconName={trashIcon}
         />
@@ -79,12 +81,12 @@ const Block = props => {
         </div>
         <div className='Block-icon-container'>
           <IconButton
-            classes='IconButton-btn-md IconButton-btn-dark IconButton-static'
+            classes='IconButton-sm IconButton-dark IconButton-static'
             action={addToNote}
             iconName={addIcon}
           />
           <IconButton
-            classes='IconButton-btn-md IconButton-btn-dark IconButton-static'
+            classes='IconButton-sm IconButton-dark IconButton-static'
             action={props.renderChildren}
             iconName={arrowForwardIcon}
           />

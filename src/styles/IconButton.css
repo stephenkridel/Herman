@@ -19,6 +19,12 @@
   right: 10px;
 }
 
+.IconButton-top-left {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
 .IconButton-static {
   position: static;
 }
@@ -32,22 +38,22 @@
   filter: invert(60%);
 }
 
-.IconButton-btn-lg {
+.IconButton-lg {
   height: 35px;
   width: 35px;
 }
 
-.IconButton-btn-md {
+.IconButton-md {
+  height: 25px;
+  width: 25px;
+}
+
+.IconButton-sm {
   height: 17px;
   width: 17px;
 }
 
-.IconButton-btn-sm {
-  height: 15px;
-  width: 15px;
-}
-
-.IconButton-btn-dark {
+.IconButton-dark {
   filter: invert(10%);
 }
 

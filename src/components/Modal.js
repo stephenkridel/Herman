@@ -4,6 +4,7 @@ import IconButton from './IconButton';
 import closeIcon from '../assets/close.png';
 import '../styles/Modal.css';
 import '../styles/Font.css';
+import '../styles/IconButton.css';
 
 const Modal = props => {
   // local state
@@ -20,7 +21,11 @@ const Modal = props => {
   return (
     <div className={`Modal-outer-container ${props.classes}`}>
       <div className={'Modal-inner-container'}>
-        <IconButton src={closeIcon} action={props.onClose} />
+        <IconButton
+          iconName={closeIcon}
+          classes='IconButton-lg IconButton-dark IconButton-md IconButton-top-left'
+          action={props.onClose}
+        />
         <h1 className={'Font-lg Modal-header'}>{props.header}</h1>
         {props.blockCreation === true && (
           <>
