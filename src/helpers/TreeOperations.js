@@ -11,7 +11,6 @@ const traverse = (searchId, tree) => {
 
   while (collection.length > 0) {
     let node = collection.shift();
-    console.log(node);
     if (node.id === searchId) {
       return node;
     } else {

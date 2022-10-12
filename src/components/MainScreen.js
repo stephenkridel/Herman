@@ -53,7 +53,7 @@ const MainScreen = () => {
         <Note />
         <IconButton
           iconName={saveIcon}
-          classes='IconButton-btn-lg IconButton-bot-right'
+          classes='IconButton-lg IconButton-bot-right'
           action={saveStateToDisk}
         />
         {showNotificaiton ? <Notify message={'Saved'} /> : null}

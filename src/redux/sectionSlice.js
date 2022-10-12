@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 // Data
 //import { default as savedData } from '../data/tree.json';
 // Helpers
-import { traverse, remove, add } from '../helpers/TreeOperations';
+import { traverse, remove, add } from '../helpers/treeOperations';
 import { default as defaultTree } from '../data/tree.json';
 
 // This is a main workhorse for the app. The currentBlock property contains
