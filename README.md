@@ -1,4 +1,4 @@
-# Herman, an electronic medical record builder for therapists
+# Herman, an intuitive note taker for therapists
 
 ### Purpose
 
@@ -9,3 +9,8 @@ Through therapy practices, providers often need to write narative style notes ch
 - React
 - Electron
 - Redux Toolkit
+
+<img src="https://github.com/stephenkridel/Herman/blob/main/screenshot3.PNG" align="left" height=350>
+<img src="https://github.com/stephenkridel/Herman/blob/main/screenshot1.PNG" align="left" height=125>
+<img src="https://github.com/stephenkridel/Herman/blob/main/screenshot2.PNG" align="left" height=125>
+<img src="https://github.com/stephenkridel/Herman/blob/main/screenshot4.PNG" align="left" height=125>
