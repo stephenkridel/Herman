@@ -10,7 +10,7 @@ Through therapy practices, providers often need to write narative style notes ch
 - Electron
 - Redux Toolkit
 
-<img src="https://github.com/stephenkridel/Herman/blob/main/screenshot3.PNG" align="left" height=350>
-<img src="https://github.com/stephenkridel/Herman/blob/main/screenshot1.PNG" align="left" height=125>
-<img src="https://github.com/stephenkridel/Herman/blob/main/screenshot2.PNG" align="left" height=125>
-<img src="https://github.com/stephenkridel/Herman/blob/main/screenshot4.PNG" align="left" height=125>
+<img src="https://github.com/stephenkridel/Herman/blob/main/screenshots/screenshot3.PNG" align="center" height=350>
+<img src="https://github.com/stephenkridel/Herman/blob/main/screenshots/screenshot1.PNG" align="left" height=125>
+<img src="https://github.com/stephenkridel/Herman/blob/main/screenshots/screenshot2.PNG" align="left" height=125>
+<img src="https://github.com/stephenkridel/Herman/blob/main/screenshots/screenshot4.PNG" align="left" height=125>
